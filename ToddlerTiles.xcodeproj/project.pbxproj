@@ -7,23 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB04C96B25C8E289000456FF /* TTImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB04C96A25C8E289000456FF /* TTImageView.swift */; };
+		CB10EB7D25CBAB6400EA00B0 /* GameTilesCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB10EB7C25CBAB6400EA00B0 /* GameTilesCVC.swift */; };
+		CB2C7C4425CCAC6D0078DC1D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2C7C4325CCAC6D0078DC1D /* Extensions.swift */; };
+		CB2C7C4925CCAE020078DC1D /* TTNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2C7C4825CCAE020078DC1D /* TTNavController.swift */; };
+		CB2C7C4E25CCCDFC0078DC1D /* GameTileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2C7C4D25CCCDFC0078DC1D /* GameTileCell.swift */; };
 		CB2C9A4325C4894700DAA903 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2C9A4225C4894700DAA903 /* AppDelegate.swift */; };
 		CB2C9A4525C4894700DAA903 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2C9A4425C4894700DAA903 /* SceneDelegate.swift */; };
-		CB2C9A4725C4894700DAA903 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2C9A4625C4894700DAA903 /* ViewController.swift */; };
-		CB2C9A4A25C4894700DAA903 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB2C9A4825C4894700DAA903 /* Main.storyboard */; };
+		CB2C9A4725C4894700DAA903 /* MenuCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2C9A4625C4894700DAA903 /* MenuCVC.swift */; };
 		CB2C9A4C25C4894800DAA903 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB2C9A4B25C4894800DAA903 /* Assets.xcassets */; };
 		CB2C9A4F25C4894800DAA903 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB2C9A4D25C4894800DAA903 /* LaunchScreen.storyboard */; };
+		CB2C9A5A25C49C2000DAA903 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2C9A5925C49C2000DAA903 /* Section.swift */; };
+		CB2C9A5D25C49C8D00DAA903 /* SectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2C9A5C25C49C8D00DAA903 /* SectionCell.swift */; };
+		CB6AADE225C8E666007B6273 /* TTSectionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6AADE125C8E666007B6273 /* TTSectionLabel.swift */; };
+		CBBD384E25CCD636002A417D /* GameTileResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBD384D25CCD636002A417D /* GameTileResources.swift */; };
+		CBC098EF25CDF54300A370DB /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBC098EE25CDF54200A370DB /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB04C96A25C8E289000456FF /* TTImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTImageView.swift; sourceTree = "<group>"; };
+		CB10EB7C25CBAB6400EA00B0 /* GameTilesCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTilesCVC.swift; sourceTree = "<group>"; };
+		CB2C7C4325CCAC6D0078DC1D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		CB2C7C4825CCAE020078DC1D /* TTNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTNavController.swift; sourceTree = "<group>"; };
+		CB2C7C4D25CCCDFC0078DC1D /* GameTileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTileCell.swift; sourceTree = "<group>"; };
 		CB2C9A3F25C4894700DAA903 /* ToddlerTiles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToddlerTiles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB2C9A4225C4894700DAA903 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB2C9A4425C4894700DAA903 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CB2C9A4625C4894700DAA903 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CB2C9A4925C4894700DAA903 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CB2C9A4625C4894700DAA903 /* MenuCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCVC.swift; sourceTree = "<group>"; };
 		CB2C9A4B25C4894800DAA903 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB2C9A4E25C4894800DAA903 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB2C9A5025C4894800DAA903 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB2C9A5925C49C2000DAA903 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		CB2C9A5C25C49C8D00DAA903 /* SectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionCell.swift; sourceTree = "<group>"; };
+		CB6AADE125C8E666007B6273 /* TTSectionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSectionLabel.swift; sourceTree = "<group>"; };
+		CBBD384D25CCD636002A417D /* GameTileResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTileResources.swift; sourceTree = "<group>"; };
+		CBC098EE25CDF54200A370DB /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +55,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB04C96825C8E245000456FF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CB2C9A5C25C49C8D00DAA903 /* SectionCell.swift */,
+				CB2C7C4D25CCCDFC0078DC1D /* GameTileCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		CB04C96925C8E252000456FF /* ImageViews */ = {
+			isa = PBXGroup;
+			children = (
+				CB04C96A25C8E289000456FF /* TTImageView.swift */,
+			);
+			path = ImageViews;
+			sourceTree = "<group>";
+		};
+		CB2C7C3E25CCABB70078DC1D /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				CBBD384D25CCD636002A417D /* GameTileResources.swift */,
+				CB2C7C4325CCAC6D0078DC1D /* Extensions.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		CB2C7C4725CCADE10078DC1D /* NavController */ = {
+			isa = PBXGroup;
+			children = (
+				CB2C7C4825CCAE020078DC1D /* TTNavController.swift */,
+			);
+			path = NavController;
+			sourceTree = "<group>";
+		};
 		CB2C9A3625C4894700DAA903 = {
 			isa = PBXGroup;
 			children = (
@@ -56,15 +108,62 @@
 		CB2C9A4125C4894700DAA903 /* ToddlerTiles */ = {
 			isa = PBXGroup;
 			children = (
-				CB2C9A4225C4894700DAA903 /* AppDelegate.swift */,
-				CB2C9A4425C4894700DAA903 /* SceneDelegate.swift */,
-				CB2C9A4625C4894700DAA903 /* ViewController.swift */,
-				CB2C9A4825C4894700DAA903 /* Main.storyboard */,
-				CB2C9A4B25C4894800DAA903 /* Assets.xcassets */,
-				CB2C9A4D25C4894800DAA903 /* LaunchScreen.storyboard */,
+				CB2C7C3E25CCABB70078DC1D /* Utilities */,
+				CB69697925CD009F00514FE7 /* Models */,
+				CB6AADE625C8F41B007B6273 /* Custom Views */,
+				CB6AADE725C8F44C007B6273 /* Screen Views */,
+				CBA6C81A25CA051B0069D698 /* Support */,
 				CB2C9A5025C4894800DAA903 /* Info.plist */,
 			);
 			path = ToddlerTiles;
+			sourceTree = "<group>";
+		};
+		CB69697925CD009F00514FE7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CB2C9A5925C49C2000DAA903 /* Section.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CB6AADE025C8E646007B6273 /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				CB6AADE125C8E666007B6273 /* TTSectionLabel.swift */,
+			);
+			path = Labels;
+			sourceTree = "<group>";
+		};
+		CB6AADE625C8F41B007B6273 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				CB2C7C4725CCADE10078DC1D /* NavController */,
+				CB6AADE025C8E646007B6273 /* Labels */,
+				CB04C96925C8E252000456FF /* ImageViews */,
+				CB04C96825C8E245000456FF /* Cells */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		CB6AADE725C8F44C007B6273 /* Screen Views */ = {
+			isa = PBXGroup;
+			children = (
+				CB2C9A4625C4894700DAA903 /* MenuCVC.swift */,
+				CB10EB7C25CBAB6400EA00B0 /* GameTilesCVC.swift */,
+			);
+			path = "Screen Views";
+			sourceTree = "<group>";
+		};
+		CBA6C81A25CA051B0069D698 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				CB2C9A4225C4894700DAA903 /* AppDelegate.swift */,
+				CB2C9A4425C4894700DAA903 /* SceneDelegate.swift */,
+				CB2C9A4B25C4894800DAA903 /* Assets.xcassets */,
+				CBC098EE25CDF54200A370DB /* Colors.xcassets */,
+				CB2C9A4D25C4894800DAA903 /* LaunchScreen.storyboard */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,9 +223,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBC098EF25CDF54300A370DB /* Colors.xcassets in Resources */,
 				CB2C9A4F25C4894800DAA903 /* LaunchScreen.storyboard in Resources */,
 				CB2C9A4C25C4894800DAA903 /* Assets.xcassets in Resources */,
-				CB2C9A4A25C4894700DAA903 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,23 +236,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB2C9A4725C4894700DAA903 /* ViewController.swift in Sources */,
+				CB04C96B25C8E289000456FF /* TTImageView.swift in Sources */,
+				CB2C7C4E25CCCDFC0078DC1D /* GameTileCell.swift in Sources */,
+				CB6AADE225C8E666007B6273 /* TTSectionLabel.swift in Sources */,
+				CB2C7C4925CCAE020078DC1D /* TTNavController.swift in Sources */,
+				CB2C9A4725C4894700DAA903 /* MenuCVC.swift in Sources */,
+				CB2C9A5A25C49C2000DAA903 /* Section.swift in Sources */,
+				CB10EB7D25CBAB6400EA00B0 /* GameTilesCVC.swift in Sources */,
+				CBBD384E25CCD636002A417D /* GameTileResources.swift in Sources */,
 				CB2C9A4325C4894700DAA903 /* AppDelegate.swift in Sources */,
+				CB2C9A5D25C49C8D00DAA903 /* SectionCell.swift in Sources */,
 				CB2C9A4525C4894700DAA903 /* SceneDelegate.swift in Sources */,
+				CB2C7C4425CCAC6D0078DC1D /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CB2C9A4825C4894700DAA903 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CB2C9A4925C4894700DAA903 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CB2C9A4D25C4894800DAA903 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -289,6 +389,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2H74473MY2;
 				INFOPLIST_FILE = ToddlerTiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,6 +409,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2H74473MY2;
 				INFOPLIST_FILE = ToddlerTiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
