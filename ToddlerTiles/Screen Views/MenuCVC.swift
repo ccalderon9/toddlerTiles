@@ -27,7 +27,6 @@ class MenuCVC: UICollectionViewController {
         
         view.addSubview(titleLabel)
         configureTitleLabel()
-  //      addPanGesture(view: collectionView)
     }
     
     // TODO: Try replacing titleLabel with navigationBar.title.
@@ -47,7 +46,6 @@ class MenuCVC: UICollectionViewController {
             titleLabel.heightAnchor.constraint(equalToConstant: 40)
         ])
     }
-
 }
 
 // MARK:- UICollectionViewDelegate/DataSource

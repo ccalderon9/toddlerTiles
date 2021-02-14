@@ -7,6 +7,7 @@
 
 import UIKit
 
+// Intern - DISPLAYS info
 
 class GameTileCVC: UICollectionViewController {
 
@@ -18,7 +19,7 @@ class GameTileCVC: UICollectionViewController {
         navigationController?.hideNavigationItemBackground()
         
         // TEST: on physical device. Possibly remove if interferes with game.
-        navigationController?.hidesBarsOnSwipe = true
+       // navigationController?.hidesBarsOnSwipe = true
     }
     
     override func viewDidLoad() {
@@ -29,7 +30,7 @@ class GameTileCVC: UICollectionViewController {
     }
 }
 
-// MARK: UICollectionViewDataSource
+// MARK: UICollectionViewDataSource / Delegate
 
 extension GameTileCVC {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -39,26 +40,37 @@ extension GameTileCVC {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GameTileCell.reuseID, for: indexPath) as! GameTileCell
+        setImageAndColor(for: cell)
+        cell.delegate = self
+        return cell
+    }
+    
 
+    func setImageAndColor(for cell: GameTileCell) {
         let randomNumber = Int.random(in: 1...30)
-        cell.gameTileImageView.image = UIImage(named: "\(section)\(randomNumber)")
-        
-        
-        if section == "Flowers" {
+        cell.gameTileImageView.image = UIImage(named: "\(self.section)\(randomNumber)")
+        if self.section == "Flowers" {
             let lightColor = Int.random(in: 16...30)
             cell.gameTileImageView.backgroundColor = UIColor(named: "color\(lightColor)")
         } else {
             let primaryColor = Int.random(in: 1...15)
             cell.gameTileImageView.backgroundColor = UIColor(named: "color\(primaryColor)")
         }
-    
-        return cell
     }
-    
-    // MARK: UICollectionViewDelegate
-    // - Manages user interactions with items in the collection view.
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+}
+
+
+extension GameTileCVC: GameTileCellProtocol {
+    func didTapImageView(for cell: GameTileCell) {
+        UIView.animate(withDuration: 0.4) {
+            cell.gameTileImageView.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+        } completion: { (_ finished: Bool) in
+            UIView.animate(withDuration: 0.4) {
+                self.setImageAndColor(for: cell)
+                cell.gameTileImageView.transform = CGAffineTransform.identity
+            }
+        }
+        print(#function)
     }
 }
 
@@ -89,7 +101,7 @@ extension GameTileCVC: UICollectionViewDelegateFlowLayout {
         if #available(iOS 13.0, *) {
             let window = UIApplication.shared.windows[0]
             let topPadding = window.safeAreaInsets.top
-            height = ((view.frame.height - topPadding) / 3) - 21
+            height = ((view.frame.height - topPadding) / 3) - 40 // - 21 to scroll and obscure title.
         }
         
         return CGSize(width: width, height: height) // parameters must be CGFloat

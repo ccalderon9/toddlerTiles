@@ -7,15 +7,30 @@
 
 import UIKit
 
+// Boss / Delegating object - HAS info
+
+@objc protocol GameTileCellProtocol {
+    func didTapImageView(for cell: GameTileCell)
+}
 
 class GameTileCell: UICollectionViewCell {
     
     static let reuseID = "GameTileCell"
     var gameTileImageView = TTImageView(frame: .zero)
     
+    var gesture: UITapGestureRecognizer?
+    weak var delegate: GameTileCellProtocol?
+
+    var isHandleTapExecuted = false
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
+        
+        gesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        gameTileImageView.isUserInteractionEnabled = true
+        gameTileImageView.addGestureRecognizer(gesture!)
+
     }
     
     
@@ -34,4 +49,14 @@ class GameTileCell: UICollectionViewCell {
             gameTileImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
     }
+    
+    
+    @objc func handleTap(_ sender: UITapGestureRecognizer) {
+        self.delegate?.didTapImageView(for: self)
+        // calls the delegate method
+        // "Whoever is the delegate, now's the time to execute prot func."
+        isHandleTapExecuted = true
+        print(isHandleTapExecuted)
+    }
 }
+
