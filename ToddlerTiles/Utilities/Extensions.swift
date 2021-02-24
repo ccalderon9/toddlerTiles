@@ -7,36 +7,6 @@
 
 import UIKit
 
-extension UIColor {
-    convenience init(hexString: String, alpha: CGFloat = 1.0) {
-        let hexString: String = hexString.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-        let scanner = Scanner(string: hexString)
-        if (hexString.hasPrefix("#")) {
-            scanner.currentIndex = scanner.string.index(after: scanner.currentIndex)
-        }
-        var color: UInt64 = 0
-        scanner.scanHexInt64(&color)
-        let mask = 0x000000FF
-        let r = Int(color >> 16) & mask
-        let g = Int(color >> 8) & mask
-        let b = Int(color) & mask
-        let red   = CGFloat(r) / 255.0
-        let green = CGFloat(g) / 255.0
-        let blue  = CGFloat(b) / 255.0
-        self.init(red:red, green:green, blue:blue, alpha:alpha)
-    }
-    
-    
-    func toHexString() -> String {
-        var r:CGFloat = 0
-        var g:CGFloat = 0
-        var b:CGFloat = 0
-        var a:CGFloat = 0
-        getRed(&r, green: &g, blue: &b, alpha: &a)
-        let rgb:Int = (Int)(r*255)<<16 | (Int)(g*255)<<8 | (Int)(b*255)<<0
-        return String(format:"#%06x", rgb)
-    }
-}
 
 extension UINavigationController {
     func hideNavigationItemBackground() {
@@ -44,5 +14,35 @@ extension UINavigationController {
         navigationBar.shadowImage = UIImage()
         navigationBar.isTranslucent = true
         view.backgroundColor = .clear
+    }
+}
+
+
+extension UIPanGestureRecognizer {
+    public struct PanGestureDirection: OptionSet {
+        public let rawValue: UInt8
+
+        public init(rawValue: UInt8) {
+            self.rawValue = rawValue
+        }
+
+        static let Up = PanGestureDirection(rawValue: 1 << 0)
+        static let Down = PanGestureDirection(rawValue: 1 << 1)
+        static let Left = PanGestureDirection(rawValue: 1 << 2)
+        static let Right = PanGestureDirection(rawValue: 1 << 3)
+    }
+
+    private func getDirectionBy(velocity: CGFloat, greater: PanGestureDirection, lower: PanGestureDirection) -> PanGestureDirection {
+        if velocity == 0 {
+            return []
+        }
+        return velocity > 0 ? greater : lower
+    }
+
+    public func direction(in view: UIView) -> PanGestureDirection {
+        let velocity = self.velocity(in: view)
+        let yDirection = getDirectionBy(velocity: velocity.y, greater: PanGestureDirection.Down, lower: PanGestureDirection.Up)
+        let xDirection = getDirectionBy(velocity: velocity.x, greater: PanGestureDirection.Right, lower: PanGestureDirection.Left)
+        return xDirection.union(yDirection)
     }
 }

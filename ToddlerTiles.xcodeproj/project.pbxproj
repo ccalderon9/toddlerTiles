@@ -20,7 +20,6 @@
 		CB2C9A5A25C49C2000DAA903 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2C9A5925C49C2000DAA903 /* Section.swift */; };
 		CB2C9A5D25C49C8D00DAA903 /* SectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2C9A5C25C49C8D00DAA903 /* SectionCell.swift */; };
 		CB6AADE225C8E666007B6273 /* TTSectionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6AADE125C8E666007B6273 /* TTSectionLabel.swift */; };
-		CBBD384E25CCD636002A417D /* GameTileResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBD384D25CCD636002A417D /* GameTileResources.swift */; };
 		CBC098EF25CDF54300A370DB /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBC098EE25CDF54200A370DB /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -40,7 +39,6 @@
 		CB2C9A5925C49C2000DAA903 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		CB2C9A5C25C49C8D00DAA903 /* SectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionCell.swift; sourceTree = "<group>"; };
 		CB6AADE125C8E666007B6273 /* TTSectionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSectionLabel.swift; sourceTree = "<group>"; };
-		CBBD384D25CCD636002A417D /* GameTileResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTileResources.swift; sourceTree = "<group>"; };
 		CBC098EE25CDF54200A370DB /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,7 +73,6 @@
 		CB2C7C3E25CCABB70078DC1D /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				CBBD384D25CCD636002A417D /* GameTileResources.swift */,
 				CB2C7C4325CCAC6D0078DC1D /* Extensions.swift */,
 			);
 			path = Utilities;
@@ -243,7 +240,6 @@
 				CB2C9A4725C4894700DAA903 /* MenuCVC.swift in Sources */,
 				CB2C9A5A25C49C2000DAA903 /* Section.swift in Sources */,
 				CB10EB7D25CBAB6400EA00B0 /* GameTilesCVC.swift in Sources */,
-				CBBD384E25CCD636002A417D /* GameTileResources.swift in Sources */,
 				CB2C9A4325C4894700DAA903 /* AppDelegate.swift in Sources */,
 				CB2C9A5D25C49C8D00DAA903 /* SectionCell.swift in Sources */,
 				CB2C9A4525C4894700DAA903 /* SceneDelegate.swift in Sources */,

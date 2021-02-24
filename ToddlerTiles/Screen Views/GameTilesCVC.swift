@@ -12,7 +12,7 @@ import UIKit
 class GameTileCVC: UICollectionViewController {
 
     var section = ""
-
+    
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: true)
@@ -27,6 +27,54 @@ class GameTileCVC: UICollectionViewController {
         
         collectionView.backgroundColor = .black
         self.collectionView!.register(GameTileCell.self, forCellWithReuseIdentifier: GameTileCell.reuseID)
+        addPan()
+    }
+    
+    
+    func addPan() {
+        let pan = UIPanGestureRecognizer(target: self, action: #selector(handlePan(sender:)))
+        view.addGestureRecognizer(pan)
+        collectionView.addGestureRecognizer(pan)
+    }
+    
+    
+    @objc func handlePan(sender: UIPanGestureRecognizer) {
+        if let indexPath = self.collectionView?.indexPathForItem(at: sender.location(in: self.collectionView)) {
+            let cell = collectionView?.cellForItem(at: indexPath) as! GameTileCell
+            let location = sender.location(in: collectionView)
+            
+            switch sender.state {
+            case .began, .changed, .ended:
+                if cell.frame.contains(location) && !cell.hasBeenFlipped {
+                    flip(sender: sender, cell: cell)    // hasBeenFlipped = true
+                }
+            default:
+                break
+            }
+        }
+    }
+    
+    
+    func flip(sender: UIPanGestureRecognizer, cell: GameTileCell) {
+        let direction = sender.direction(in: collectionView)
+        if direction.contains(.Right) {
+            UIView.transition(with: cell.gameTileImageView, duration: 0.5, options: .transitionFlipFromLeft) {
+                self.setImageAndColor(for: cell)
+            }
+        } else if direction.contains(.Left) {
+            UIView.transition(with: cell.gameTileImageView, duration: 0.5, options: .transitionFlipFromRight) {
+                self.setImageAndColor(for: cell)
+            }
+        } else if direction.contains(.Up) {
+            UIView.transition(with: cell.gameTileImageView, duration: 0.5, options: .transitionFlipFromTop) {
+                self.setImageAndColor(for: cell)
+            }
+        } else {
+            UIView.transition(with: cell.gameTileImageView, duration: 0.5, options: .transitionFlipFromBottom) {
+                self.setImageAndColor(for: cell)
+            }
+        }
+        cell.hasBeenFlipped = true
     }
 }
 
@@ -70,7 +118,6 @@ extension GameTileCVC: GameTileCellProtocol {
                 cell.gameTileImageView.transform = CGAffineTransform.identity
             }
         }
-        print(#function)
     }
 }
 
@@ -101,9 +148,9 @@ extension GameTileCVC: UICollectionViewDelegateFlowLayout {
         if #available(iOS 13.0, *) {
             let window = UIApplication.shared.windows[0]
             let topPadding = window.safeAreaInsets.top
-            height = ((view.frame.height - topPadding) / 3) - 40 // - 21 to scroll and obscure title.
+            height = ((view.frame.height - topPadding) / 3) - 40
         }
         
-        return CGSize(width: width, height: height) // parameters must be CGFloat
+        return CGSize(width: width, height: height)
     }
 }

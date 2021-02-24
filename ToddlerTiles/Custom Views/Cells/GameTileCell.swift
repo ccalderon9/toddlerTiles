@@ -17,20 +17,16 @@ class GameTileCell: UICollectionViewCell {
     
     static let reuseID = "GameTileCell"
     var gameTileImageView = TTImageView(frame: .zero)
+    var hasBeenFlipped: Bool = false
     
     var gesture: UITapGestureRecognizer?
     weak var delegate: GameTileCellProtocol?
 
-    var isHandleTapExecuted = false
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
-        
-        gesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
-        gameTileImageView.isUserInteractionEnabled = true
-        gameTileImageView.addGestureRecognizer(gesture!)
-
+        addTap()
     }
     
     
@@ -39,8 +35,23 @@ class GameTileCell: UICollectionViewCell {
     }
     
     
+    private func addTap() {
+        gesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        gameTileImageView.isUserInteractionEnabled = true
+        gameTileImageView.addGestureRecognizer(gesture!)
+    }
+    
+    
+    @objc func handleTap(_ sender: UITapGestureRecognizer) {
+        if sender.state == .ended {
+            delegate?.didTapImageView(for: self)
+            // calls delegate method: "Whoever is the delegate, now's the time to execute prot func."
+        }
+    }
+
+    
     private func configure() {
-        addSubview(gameTileImageView)
+        contentView.addSubview(gameTileImageView)
         
         NSLayoutConstraint.activate([
             gameTileImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
@@ -48,15 +59,6 @@ class GameTileCell: UICollectionViewCell {
             gameTileImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             gameTileImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
-    }
-    
-    
-    @objc func handleTap(_ sender: UITapGestureRecognizer) {
-        self.delegate?.didTapImageView(for: self)
-        // calls the delegate method
-        // "Whoever is the delegate, now's the time to execute prot func."
-        isHandleTapExecuted = true
-        print(isHandleTapExecuted)
     }
 }
 

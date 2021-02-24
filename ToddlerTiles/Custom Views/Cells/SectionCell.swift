@@ -26,14 +26,9 @@ class SectionCell: UICollectionViewCell {
     }
     
     
-//    func set(section: Section) {
-//        sectionTitle.text = section.title
-//    }
-    
-    
     private func configure() {
-        addSubview(sectionImageView)
-        addSubview(sectionTitle)
+        contentView.addSubview(sectionImageView)
+        contentView.addSubview(sectionTitle)
         
         let padding: CGFloat = 8
         
